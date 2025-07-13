@@ -1,0 +1,50 @@
+# Starship configuration matching your zsh prompt
+add_newline = false
+
+# Set the format for the main prompt
+format = """
+${custom.git_dirty}\
+$git_branch\
+$directory\
+$character"""
+
+# Git status configuration
+# [git_status]
+# format = "[$all_status$ahead_behind]($style)"
+# style = "red"
+# conflicted = "*"
+# ahead = ""
+# behind = ""
+# diverged = ""
+# up_to_date = ""
+# untracked = "*"
+# stashed = ""
+# modified = "*"
+# staged = ""
+# renamed = ""
+# deleted = "*"
+
+[custom.git_dirty]
+when = """ [[ $(git status -s) != '' ]] """ 
+format = "[*](red)"
+
+# Git branch configuration
+[git_branch]
+format = "[\\[$symbol$branch\\]]($style)"
+symbol = ""
+style = "purple"
+
+# Directory configuration
+[directory]
+format = "[\\[$path\\]]($style)"
+style = "cyan"
+truncation_length = 0
+truncate_to_repo = false
+home_symbol = "~"
+
+# Character (prompt symbol) configuration
+[character]
+success_symbol = "[\\$](bold)"
+error_symbol = "[\\$](bold red)"
+vicmd_symbol = "[\\$](bold)"
+

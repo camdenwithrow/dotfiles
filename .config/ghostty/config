@@ -1,0 +1,10 @@
+font-family = JetBrains Mono
+theme = Github-Dark-Dimmed
+font-size = 16
+font-feature = "-calt, -liga, -dlig"
+cursor-style = block
+cursor-color = gray
+shell-integration-features = no-cursor
+window-padding-x = 8
+window-padding-y = 12,0
+macos-titlebar-style = hidden
