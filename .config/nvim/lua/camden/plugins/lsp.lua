@@ -77,6 +77,11 @@ return {
           },
         },
       },
+      gopls = {},
+      html = {},
+      tailwindcss = {},
+      templ = {},
+      ts_ls = {},
     }
 
     require('mason').setup()
