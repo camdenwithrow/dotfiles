@@ -5,7 +5,7 @@ vim.g.maplocalleader = ' '
 
 -- [[ Basic Keymaps ]]
 -- Exit insert mode
-vim.keymap.set('i', 'jk', '<Esc>')
+-- vim.keymap.set('i', 'jk', '<Esc>')
 
 -- Open Explore
 vim.keymap.set('n', '<leader>e', '<cmd>Oil<CR>')
@@ -37,8 +37,14 @@ vim.keymap.set('n', '<C-u>', function()
 end, { noremap = true, silent = true, expr = true })
 
 -- Diagnostic keymaps
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
+vim.keymap.set('n', '[d', function()
+  vim.diagnostic.jump { count = 1, float = true }
+end, { desc = 'Go to previous [D]iagnostic message' })
+
+vim.keymap.set('n', ']d', function()
+  vim.diagnostic.jump { count = -1, float = true }
+end, { desc = 'Go to next [D]iagnostic message' })
+
 vim.keymap.set('n', '<leader>E', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
@@ -55,9 +61,9 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 --
 --  See `:help wincmd` for a list of all window commands
 
-vim.keymap.set('n', '<leader>wv', '<C-w>v', { desc = 'Split window vertically' }) -- split window vertically
-vim.keymap.set('n', '<leader>wh', '<C-w>s', { desc = 'Split window horizontally' }) -- split window horizontally
-vim.keymap.set('n', '<leader>we', '<C-w>=', { desc = 'Make splits equal size' }) -- make split windows equal width & height
+-- vim.keymap.set('n', '<leader>wv', '<C-w>v', { desc = 'Split window vertically' }) -- split window vertically
+-- vim.keymap.set('n', '<leader>wh', '<C-w>s', { desc = 'Split window horizontally' }) -- split window horizontally
+-- vim.keymap.set('n', '<leader>we', '<C-w>=', { desc = 'Make splits equal size' }) -- make split windows equal width & height
 vim.keymap.set('n', '<leader>wx', '<cmd>close<CR>', { desc = 'Close current split' }) -- close current split window
 
 vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })

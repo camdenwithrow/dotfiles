@@ -1,10 +1,10 @@
-# Load starship prompt styling
-eval "$(starship init zsh)"
-
 # Load homebrew
 if [[ -f "/opt/homebrew/bin/brew" ]] then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
+
+# Load starship prompt styling
+eval "$(starship init zsh)"
 
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -32,6 +32,14 @@ bindkey -e
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
+diffy() {
+  preview="git diff $@ --color=always -- {-1}"
+  selected=$(git diff $@ --name-only | fzf -m --ansi --preview $preview --preview-window=right,70% \
+    --bind 'alt-k:preview-half-page-up,alt-j:preview-half-page-down')
+  if [ -n "$selected" ]; then
+    echo "$selected" | xargs nvim
+  fi
+}
 
 # History
 HISTSIZE=5000
@@ -51,11 +59,13 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
-# zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
 alias ls='ls --color'
 alias nv='nvim'
+
+export BAT_THEME="base16"
 
 # Shell integrations
 eval "$(fzf --zsh)"
