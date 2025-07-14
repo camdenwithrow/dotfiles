@@ -8,25 +8,10 @@ $git_branch\
 $directory\
 $character"""
 
-# Git status configuration
-# [git_status]
-# format = "[$all_status$ahead_behind]($style)"
-# style = "red"
-# conflicted = "*"
-# ahead = ""
-# behind = ""
-# diverged = ""
-# up_to_date = ""
-# untracked = "*"
-# stashed = ""
-# modified = "*"
-# staged = ""
-# renamed = ""
-# deleted = "*"
-
 [custom.git_dirty]
 when = """ [[ $(git status -s) != '' ]] """ 
 format = "[*](red)"
+ignore_timeout = true
 
 # Git branch configuration
 [git_branch]
