@@ -4,7 +4,7 @@ Welcome to my dotfiles repository, managed with GNU Stow.
 
 ## What are Dotfiles & Why Stow?
 
-Dotfiles are hidden configuration files (e.g., `.bashrc`) that customize your system. Managing them with Stow allows for easy synchronization across machines and a clean home directory by creating symbolic links from this repo to your home.
+Dotfiles are hidden configuration files (e.g., `.zshrc`) that customize your system. Managing them with gnu stow allows for easy synchronization across machines and a clean home directory by creating symbolic links from this repo to your home.
 
 ## Getting Started
 
