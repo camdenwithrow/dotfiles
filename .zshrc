@@ -64,6 +64,7 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 # Aliases
 alias ls='ls --color'
 alias nv='nvim'
+alias ai='aichat'
 
 export BAT_THEME="base16"
 

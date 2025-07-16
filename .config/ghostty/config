@@ -1,5 +1,6 @@
 font-family = JetBrains Mono
 theme = Github-Dark-Dimmed
+background-opacity = 0.8
 font-size = 16
 font-feature = "-calt, -liga, -dlig"
 cursor-style = block
