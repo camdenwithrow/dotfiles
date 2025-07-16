@@ -5,7 +5,6 @@ return { -- Highlight, edit, and navigate code
   dependencies = {
     'nvim-treesitter/nvim-treesitter-textobjects',
     'windwp/nvim-ts-autotag',
-    'vrischmann/tree-sitter-templ',
     'virchau13/tree-sitter-astro',
   },
   opts = {
