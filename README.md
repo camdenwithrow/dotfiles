@@ -31,8 +31,14 @@ cd ~/dotfiles
 ```
 
 3. **Run Stow:**
+Either stow each config package individual:
 ```
-stow .
+stow $PACKAGE_NAME
+```
+Or, install all packages:
+```
+chmod +x ./install
+./install
 ```
 
 This links all top-level directories (e.g., `.config`, `.zshrc`) to your home directory.
