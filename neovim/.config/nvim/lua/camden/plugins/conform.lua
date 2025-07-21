@@ -26,9 +26,9 @@ return { -- Autoformat
     end,
     formatters_by_ft = {
       lua = { 'stylua' },
-      javascript = { 'prettierd', 'prettier' },
-      typescript = { 'prettierd', 'prettier' },
-      go = { stop_after_first = true, 'goimports', 'gofumpt' },
+      javascript = { 'prettier' },
+      typescript = { 'prettier' },
+      go = { stop_after_first = false, 'goimports', 'gofumpt' },
     },
   },
 }

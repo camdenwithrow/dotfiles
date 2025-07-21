@@ -9,9 +9,7 @@ return {
   },
 
   opts = {
-    servers = {
-      -- Do not include sourcekit here to avoid Mason managing it
-    },
+    servers = {},
   },
 
   config = function()

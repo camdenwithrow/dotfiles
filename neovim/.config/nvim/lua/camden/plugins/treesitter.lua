@@ -5,7 +5,6 @@ return { -- Highlight, edit, and navigate code
   dependencies = {
     'nvim-treesitter/nvim-treesitter-textobjects',
     'windwp/nvim-ts-autotag',
-    'virchau13/tree-sitter-astro',
   },
   opts = {
     ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc' },
